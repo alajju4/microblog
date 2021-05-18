@@ -1,4 +1,4 @@
-2021-05-18 14:41:43,544 ERROR: Exception on /user/123 [GET] [in c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py:1891]
+2021-05-18 14:43:43,443 ERROR: Exception on /index [GET] [in c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1706, in _execute_context
     self.dialect.do_execute(
@@ -23,42 +23,12 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\routes.py", line 141, in user
-    return render_template('user.html', user=user, posts=posts.items,
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\templating.py", line 137, in render_template
-    return _render(
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\templates\base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\templates\user.html", line 13, in block "app_content"
-    <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\dynamic.py", line 337, in count
-    return self._generate(sess).count()
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3078, in count
-    return self._from_self(col).enable_eagerloads(False).scalar()
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2819, in scalar
-    ret = self.one()
-  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2796, in one
-    return self._iter().one()
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\routes.py", line 32, in index
+    posts = current_user.followed_posts().paginate(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
   File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2834, in _iter
     result = self.session.execute(
   File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1675, in execute
@@ -80,9 +50,52 @@ Traceback (most recent call last):
   File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers
-[SQL: SELECT count(*) AS count_1 
-FROM (SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
-FROM user, followers 
-WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
-[parameters: (1,)]
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE post.user_id = ?) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (1, 1, 25, 0)]
 (Background on this error at: http://sqlalche.me/e/14/e3q8)
+2021-05-18 14:48:41,876 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 14:48:45,093 ERROR: Exception on /reset_password_request [GET] [in c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\routes.py", line 109, in reset_password_request
+    return render_template('reset_password_request.html',
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\jinja2\loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: reset_password_request.html
+2021-05-18 14:52:53,480 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 14:53:14,780 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 14:54:11,802 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 14:54:58,217 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 14:56:02,891 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 14:56:17,625 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 15:10:08,741 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:53]
+2021-05-18 15:25:07,388 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:54]
