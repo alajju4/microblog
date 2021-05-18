@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from app import app
-from app.forms import LoginForm
+from app.forms import LoginForm, PostForm, RegistrationForm
 from flask_login import current_user, login_user
 from app.models import User
 from flask_login import logout_user
@@ -22,6 +22,7 @@ def index():
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
+
     posts = current_user.followed_posts().all()[
         {
             'author': {'username': 'John'},
@@ -41,6 +42,7 @@ def index():
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
+
     form = LoginForm()
 
     if form.validate_on_submit():
@@ -53,6 +55,8 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
+
+    return render_template('login.html', form=form)
 
 @app.route('/logout')
 def logout():
@@ -132,8 +136,7 @@ def unfollow(username):
 
 @app.route('/user/<username>')
 @login_required
-def user(username):
-    # ...
+def users(username):
     form = EmptyForm()
     return render_template('user.html', user=user, posts=posts, form=form)
 
@@ -142,3 +145,8 @@ def user(username):
 def explore():
     posts = Post.query.order_by(Post.timestamp.desc()).all()
     return render_template('index.html', title='Explore', posts=posts)
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', form=form)
