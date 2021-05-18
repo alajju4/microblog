@@ -1,0 +1,106 @@
+2021-05-18 14:36:06,579 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:54]
+2021-05-18 14:37:29,933 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:54]
+2021-05-18 14:37:31,118 ERROR: Exception on / [GET] [in c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1948, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 2242, in preprocess_request
+    rv = func()
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\routes.py", line 17, in before_request
+    g.locale = str(get_locale())
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_babel\__init__.py", line 226, in get_locale
+    rv = babel.locale_selector_func()
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py", line 59, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+KeyError: 'LANGUAGES'
+2021-05-18 14:37:41,314 ERROR: Exception on /login [GET] [in c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1948, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 2242, in preprocess_request
+    rv = func()
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\routes.py", line 17, in before_request
+    g.locale = str(get_locale())
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_babel\__init__.py", line 226, in get_locale
+    rv = babel.locale_selector_func()
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py", line 59, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+KeyError: 'LANGUAGES'
+2021-05-18 14:40:50,448 INFO: Microblog startup [in C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\__init__.py:54]
+2021-05-18 14:41:36,959 ERROR: Exception on /index [GET] [in c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1706, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: followers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\ÀÌÁöÈÆ\Desktop\miguel\microblog\app\routes.py", line 32, in index
+    posts = current_user.followed_posts().paginate(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2834, in _iter
+    result = self.session.execute(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1675, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 313, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1390, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1749, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1930, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1706, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\ÀÌÁöÈÆ\desktop\miguel\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE post.user_id = ?) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (1, 1, 25, 0)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
