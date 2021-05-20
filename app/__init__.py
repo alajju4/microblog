@@ -1,5 +1,4 @@
 #템플릿 등의 파일들을 로드 
-
 import os
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
