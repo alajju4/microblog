@@ -1,6 +1,5 @@
 #템플릿 등의 파일들을 로드 
-import logging
-from logging.handlers import SMTPHandler, RotatingFileHandler
+
 import os
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
@@ -11,6 +10,8 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from config import Config
 from flask_babel import Babel, lazy_gettext as _l
+import logging
+from logging.handlers import SMTPHandler, RotatingFileHandler
 
 
 app = Flask(__name__)
