@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-20 14:23+0900\n"
+"POT-Creation-Date: 2021-05-21 11:16+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Remember Me"
 msgstr ""
 
-#: app/forms.py:14 app/routes.py:78 app/templates/login.html:5
+#: app/forms.py:14 app/routes.py:77 app/templates/login.html:5
 msgid "Sign In"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Repeat Password"
 msgstr ""
 
-#: app/forms.py:24 app/routes.py:99 app/templates/register.html:5
+#: app/forms.py:24 app/routes.py:98 app/templates/register.html:5
 msgid "Register"
 msgstr ""
 
@@ -77,65 +77,65 @@ msgstr ""
 msgid "Say something"
 msgstr ""
 
-#: app/routes.py:34
+#: app/routes.py:33
 msgid "Your post is now live!"
 msgstr ""
 
-#: app/routes.py:43 app/templates/base.html:21
+#: app/routes.py:42 app/templates/base.html:21
 msgid "Home"
 msgstr ""
 
-#: app/routes.py:58 app/templates/base.html:22
+#: app/routes.py:57 app/templates/base.html:22
 msgid "Explore"
 msgstr ""
 
-#: app/routes.py:71
+#: app/routes.py:70
 msgid "Invalid username or password"
 msgstr ""
 
-#: app/routes.py:97
+#: app/routes.py:96
 msgid "Congratulations, you are now a registered user!"
 msgstr ""
 
-#: app/routes.py:112
+#: app/routes.py:111
 msgid "Check your email for the instructions to reset your password"
 msgstr ""
 
-#: app/routes.py:115 app/templates/reset_passord_request.html:5
+#: app/routes.py:114 app/templates/reset_passord_request.html:5
 msgid "Reset Password"
 msgstr ""
 
-#: app/routes.py:129
+#: app/routes.py:128
 msgid "Your password has been reset."
 msgstr ""
 
-#: app/routes.py:158
+#: app/routes.py:157
 msgid "Your changes have been saved."
 msgstr ""
 
-#: app/routes.py:163 app/templates/edit_profile.html:5
+#: app/routes.py:162 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr ""
 
-#: app/routes.py:174 app/routes.py:194
+#: app/routes.py:173 app/routes.py:193
 #, python-format
 msgid "User %(username)s not found."
 msgstr ""
 
-#: app/routes.py:177
+#: app/routes.py:176
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/routes.py:181
+#: app/routes.py:180
 #, python-format
 msgid "You are following %(username)s!"
 msgstr ""
 
-#: app/routes.py:197
+#: app/routes.py:196
 msgid "You cannot unfollow yourself!"
 msgstr ""
 
-#: app/routes.py:201
+#: app/routes.py:200
 #, python-format
 msgid "You are not following %(username)s."
 msgstr ""
@@ -187,6 +187,10 @@ msgstr ""
 
 #: app/templates/base.html:29
 msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:66
+msgid "Error: Could not contact server."
 msgstr ""
 
 #: app/templates/index.html:5
